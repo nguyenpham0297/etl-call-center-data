@@ -1,0 +1,783 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/21/2024 8:36:59 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="GITHENDU"
+  DTS:CreatorName="GITHENDU\patri"
+  DTS:DTSID="{1E85BD7D-6530-42E8-A43E-E597C3F2F811}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="STA_CallData"
+  DTS:PackageType="5"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{2E9AE1AF-16B8-4247-B827-EF48975E9A5A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{36E355E8-23D0-401C-BDF2-3958BFD34EF1}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::Filename]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CallTimestamp"
+              DTS:DTSID="{41DB5C0E-9C17-4B89-8FF0-E7D36B5900C2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Call Type"
+              DTS:DTSID="{2F4CDD44-671B-436B-880E-5FEE75A79922}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmployeeID"
+              DTS:DTSID="{ECD422B6-4AE5-4029-A281-86CFF82106DA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CallDuration"
+              DTS:DTSID="{6D657F89-16B3-45A9-BF88-4BA55213B777}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="WaitTime"
+              DTS:DTSID="{13B7964F-02D5-4BA9-93B2-1AEEC48FB353}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CallAbandoned"
+              DTS:DTSID="{94A88064-10DA-4328-B148-BA0F7F2872A9}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-DE-XOAN\SQL.A_23_Call_Types_STA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F2906A12-82B3-4759-BA99-3207A5557D0A}"
+      DTS:ObjectName="LAPTOP-DE-XOAN\SQL.A_23_Call_Types_STA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-DE-XOAN\SQL;Initial Catalog=A_23_Call_Types_STA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-STA_CallData-{F2906A12-82B3-4759-BA99-3207A5557D0A}LAPTOP-DE-XOAN\SQL.A_23_Call_Types_STA;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.A_23_Call_Types_STA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{67A558A1-C2F7-47A4-BA5D-E67898E90D32}"
+      DTS:ObjectName="localhost.A_23_Call_Types_STA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-DE-XOAN\SQL;Initial Catalog=A_23_Call_Types_STA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-STA_CallData-{67A558A1-C2F7-47A4-BA5D-E67898E90D32}localhost.A_23_Call_Types_STA;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PHUCNGUYEN\NGUYENSQL2019.A_23_Call_Types_STA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BF8DC047-607D-49B3-8026-8EEBF6150AA7}"
+      DTS:ObjectName="PHUCNGUYEN\NGUYENSQL2019.A_23_Call_Types_STA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-DE-XOAN\SQL;Initial Catalog=A_23_Call_Types_STA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-STA_CallData-{BF8DC047-607D-49B3-8026-8EEBF6150AA7}PHUCNGUYEN\NGUYENSQL2019.A_23_Call_Types_STA;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{32D9DB45-E53B-4AF2-98E2-C6D927ADFE9C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Filename">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6FB817E0-FE3D-4594-AE91-EB6CF5285ADE}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Folderpath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\patri\OneDrive\Documents\Data_Warehousing_ETL\Class_Project\Data\Calls data</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{742C3039-A46F-4A39-913C-84220D584912}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F2906A12-82B3-4759-BA99-3207A5557D0A}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.CallData" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{94804AAC-243F-473D-9A1C-FEFFD10EEA95}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop Container">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{A99FBFE7-9C14-4D5C-92BD-5C6A952CC100}"
+        DTS:ObjectName="{A99FBFE7-9C14-4D5C-92BD-5C6A952CC100}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\Users\TRUNG NGUYEN\Downloads\ETL\data ETL project submit\Data\Calls data" />
+            <FEFEProperty
+              FileSpec="Data*.csv" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{64FDBD14-6A47-4DF2-973C-D8D73F7A4F8B}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="FF_SRC_CallData"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].Columns[CallTimestamp]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].ExternalColumns[CallTimestamp]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].Columns[CallTimestamp]"
+                          name="CallTimestamp"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].Columns[Call Type]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].ExternalColumns[Call Type]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].Columns[Call Type]"
+                          name="Call Type"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].Columns[EmployeeID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].ExternalColumns[EmployeeID]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].Columns[EmployeeID]"
+                          name="EmployeeID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].Columns[CallDuration]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].ExternalColumns[CallDuration]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].Columns[CallDuration]"
+                          name="CallDuration"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].Columns[WaitTime]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].ExternalColumns[WaitTime]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].Columns[WaitTime]"
+                          name="WaitTime"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].Columns[CallAbandoned]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].ExternalColumns[CallAbandoned]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].Columns[CallAbandoned]"
+                          name="CallAbandoned"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].ExternalColumns[CallTimestamp]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CallTimestamp" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].ExternalColumns[Call Type]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Call Type" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].ExternalColumns[EmployeeID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="EmployeeID" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].ExternalColumns[CallDuration]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CallDuration" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].ExternalColumns[WaitTime]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="WaitTime" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].ExternalColumns[CallAbandoned]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CallAbandoned" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE_DST_CallData"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[CallData]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LAPTOP-DE-XOAN\SQL.A_23_Call_Types_STA]"
+                      connectionManagerRefId="Package.ConnectionManagers[LAPTOP-DE-XOAN\SQL.A_23_Call_Types_STA]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Inputs[OLE DB Destination Input].Columns[CallTimestamp]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CallTimestamp"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Inputs[OLE DB Destination Input].ExternalColumns[CallTimestamp]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].Columns[CallTimestamp]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Inputs[OLE DB Destination Input].Columns[EmployeeID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="EmployeeID"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].Columns[EmployeeID]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Inputs[OLE DB Destination Input].Columns[CallDuration]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CallDuration"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Inputs[OLE DB Destination Input].ExternalColumns[CallDuration]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].Columns[CallDuration]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Inputs[OLE DB Destination Input].Columns[WaitTime]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="WaitTime"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Inputs[OLE DB Destination Input].ExternalColumns[WaitTime]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].Columns[WaitTime]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Inputs[OLE DB Destination Input].Columns[CallAbandoned]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CallAbandoned"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Inputs[OLE DB Destination Input].ExternalColumns[CallAbandoned]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].Columns[CallAbandoned]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Inputs[OLE DB Destination Input].Columns[Call Type]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Call Type"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Inputs[OLE DB Destination Input].ExternalColumns[CallType]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output].Columns[Call Type]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Inputs[OLE DB Destination Input].ExternalColumns[CallTimestamp]"
+                          dataType="dbTimeStamp"
+                          name="CallTimestamp" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Inputs[OLE DB Destination Input].ExternalColumns[CallType]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="CallType" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="EmployeeID" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Inputs[OLE DB Destination Input].ExternalColumns[CallDuration]"
+                          dataType="i4"
+                          name="CallDuration" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Inputs[OLE DB Destination Input].ExternalColumns[WaitTime]"
+                          dataType="i4"
+                          name="WaitTime" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Inputs[OLE DB Destination Input].ExternalColumns[CallAbandoned]"
+                          dataType="bool"
+                          name="CallAbandoned" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Flat File Source Output]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{373D9E7B-F801-4F5C-9E98-70A70F055431}"
+          DTS:ObjectName="{373D9E7B-F801-4F5C-9E98-70A70F055431}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::Filename" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{7A982D8C-BAEF-47FE-AEF9-34A7A9E634B8}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Foreach Loop Container" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Execute SQL Task"
+          TopLeft="271.666651823455,20.7999998553594" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Foreach Loop Container\Data Flow Task"
+          TopLeft="40.3333208577507,60.0999996203184" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="235.2,156.8"
+          Size="235.2,200"
+          Id="Package\Foreach Loop Container"
+          TopLeft="188.333323043254,86.9333337371216" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="354.066651823455,62.3999998553594">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-48.133328780201,24.5333338817622"
+              Start="0,0"
+              End="-48.133328780201,17.0333338817622">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.26666694088112" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.26666694088112"
+                    Point2="0,12.2666669408811"
+                    Point3="-4,12.2666669408811" />
+                  <mssgle:LineSegment
+                    End="-44.133328780201,12.2666669408811" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-44.133328780201,12.2666669408811"
+                    Point2="-48.133328780201,12.2666669408811"
+                    Point3="-48.133328780201,16.2666669408811" />
+                  <mssgle:LineSegment
+                    End="-48.133328780201,17.0333338817622" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Foreach Loop Container\Data Flow Task\FF_SRC_CallData"
+          TopLeft="162.499991121392,46.7999996745586" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData"
+          TopLeft="170.833323999412,171.599998806715" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="244.899991121392,88.3999996745586">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.53333287802,83.1999991321564"
+              Start="0,0"
+              End="11.53333287802,75.6999991321564">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5999995660782" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.5999995660782"
+                    Point2="0,41.5999995660782"
+                    Point3="4,41.5999995660782" />
+                  <mssgle:LineSegment
+                    End="7.53333287801999,41.5999995660782" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.53333287801999,41.5999995660782"
+                    Point2="11.53333287802,41.5999995660782"
+                    Point3="11.53333287802,45.5999995660782" />
+                  <mssgle:LineSegment
+                    End="11.53333287802,75.6999991321564" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Data Flow Task\OLE_DST_CallData">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

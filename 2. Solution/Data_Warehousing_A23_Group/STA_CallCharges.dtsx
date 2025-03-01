@@ -1,0 +1,665 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/21/2024 4:01:55 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="GITHENDU"
+  DTS:CreatorName="GITHENDU\patri"
+  DTS:DTSID="{19A76DCD-1E56-4F9B-8600-8210AB3C3D18}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="STA_CallCharges"
+  DTS:PackageType="5"
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{98206EBA-3AFD-490D-906E-BD1B2587FBEB}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{7B3F90B3-25E1-47B4-8D37-0B1ACB31B6A0}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\TRUNG NGUYEN\Downloads\ETL\data ETL project submit\Data\Call Charges.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Call Type "
+              DTS:DTSID="{14488428-21D9-4FC5-BC0D-017D5701930E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Call Charges (2018)"
+              DTS:DTSID="{02802292-29D7-4CC7-8BD6-13B3E8CA93DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Call Charges (2019)"
+              DTS:DTSID="{CF838644-1FB7-4BA1-8324-F4C2BAA9D555}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Call Charges (2020)"
+              DTS:DTSID="{8634FBE6-BB32-4271-B899-D44DF3CD97F2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Call Charges (2021)"
+              DTS:DTSID="{713A7CB3-FD1E-4B1D-A615-97EA11B81B86}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-DE-XOAN\SQL.A_23_Call_Types_STA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{53FD73A1-39E2-418B-82C6-B5FFF44E243B}"
+      DTS:ObjectName="LAPTOP-DE-XOAN\SQL.A_23_Call_Types_STA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-DE-XOAN\SQL;Initial Catalog=A_23_Call_Types_STA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-STA_CallCharges-{53FD73A1-39E2-418B-82C6-B5FFF44E243B}LAPTOP-DE-XOAN\SQL.A_23_Call_Types_STA;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.A_23_Call_Types_STA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{EDACEC1C-F5B7-44CC-9ED3-70B68D072CF5}"
+      DTS:ObjectName="localhost.A_23_Call_Types_STA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-DE-XOAN\SQL;Initial Catalog=A_23_Call_Types_STA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-STA_CallCharges-{EDACEC1C-F5B7-44CC-9ED3-70B68D072CF5}localhost.A_23_Call_Types_STA;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PHUCNGUYEN\NGUYENSQL2019.A_23_Call_Types_STA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A188A73D-3048-47F3-B7E4-A979DB663CE9}"
+      DTS:ObjectName="PHUCNGUYEN\NGUYENSQL2019.A_23_Call_Types_STA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-DE-XOAN\SQL;Initial Catalog=A_23_Call_Types_STA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-STA_CallCharges-{A188A73D-3048-47F3-B7E4-A979DB663CE9}PHUCNGUYEN\NGUYENSQL2019.A_23_Call_Types_STA;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{8D8B4524-80A3-478C-BB6C-EBBA36B7ADD2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\FF_SRC_CallCharges"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="FF_SRC_CallCharges"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\FF_SRC_CallCharges.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].Columns[Call Type ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].ExternalColumns[Call Type ]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].Columns[Call Type ]"
+                      name="Call Type "
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].Columns[Call Charges (2018)]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].ExternalColumns[Call Charges (2018)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].Columns[Call Charges (2018)]"
+                      name="Call Charges (2018)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].Columns[Call Charges (2019)]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].ExternalColumns[Call Charges (2019)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].Columns[Call Charges (2019)]"
+                      name="Call Charges (2019)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].Columns[Call Charges (2020)]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].ExternalColumns[Call Charges (2020)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].Columns[Call Charges (2020)]"
+                      name="Call Charges (2020)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].Columns[Call Charges (2021)]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].ExternalColumns[Call Charges (2021)]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].Columns[Call Charges (2021)]"
+                      name="Call Charges (2021)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].ExternalColumns[Call Type ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Call Type " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].ExternalColumns[Call Charges (2018)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Call Charges (2018)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].ExternalColumns[Call Charges (2019)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Call Charges (2019)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].ExternalColumns[Call Charges (2020)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Call Charges (2020)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].ExternalColumns[Call Charges (2021)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Call Charges (2021)" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE_DST_CallCharges"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE_DST_CallCharges"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[CallCharges]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE_DST_CallCharges.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-DE-XOAN\SQL.A_23_Call_Types_STA]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-DE-XOAN\SQL.A_23_Call_Types_STA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE_DST_CallCharges.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE_DST_CallCharges.Inputs[OLE DB Destination Input].Columns[Call Type ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Call Type "
+                      externalMetadataColumnId="Package\Data Flow Task\OLE_DST_CallCharges.Inputs[OLE DB Destination Input].ExternalColumns[CallType]"
+                      lineageId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].Columns[Call Type ]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE_DST_CallCharges.Inputs[OLE DB Destination Input].Columns[Call Charges (2018)]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Call Charges (2018)"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE_DST_CallCharges.Inputs[OLE DB Destination Input].ExternalColumns[CallCharges2018]"
+                      lineageId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].Columns[Call Charges (2018)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE_DST_CallCharges.Inputs[OLE DB Destination Input].Columns[Call Charges (2019)]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Call Charges (2019)"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE_DST_CallCharges.Inputs[OLE DB Destination Input].ExternalColumns[CallCharges2019]"
+                      lineageId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].Columns[Call Charges (2019)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE_DST_CallCharges.Inputs[OLE DB Destination Input].Columns[Call Charges (2020)]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Call Charges (2020)"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE_DST_CallCharges.Inputs[OLE DB Destination Input].ExternalColumns[CallCharges2020]"
+                      lineageId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].Columns[Call Charges (2020)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE_DST_CallCharges.Inputs[OLE DB Destination Input].Columns[Call Charges (2021)]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Call Charges (2021)"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE_DST_CallCharges.Inputs[OLE DB Destination Input].ExternalColumns[CallCharges2021]"
+                      lineageId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output].Columns[Call Charges (2021)]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE_DST_CallCharges.Inputs[OLE DB Destination Input].ExternalColumns[CallType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CallType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE_DST_CallCharges.Inputs[OLE DB Destination Input].ExternalColumns[CallCharges2018]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CallCharges2018" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE_DST_CallCharges.Inputs[OLE DB Destination Input].ExternalColumns[CallCharges2019]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CallCharges2019" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE_DST_CallCharges.Inputs[OLE DB Destination Input].ExternalColumns[CallCharges2020]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CallCharges2020" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE_DST_CallCharges.Inputs[OLE DB Destination Input].ExternalColumns[CallCharges2021]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CallCharges2021" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE_DST_CallCharges.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE_DST_CallCharges.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE_DST_CallCharges.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE_DST_CallCharges.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE_DST_CallCharges.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE_DST_CallCharges.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task\OLE_DST_CallCharges.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task\FF_SRC_CallCharges.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8C069655-3355-4942-921D-184869E87400}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{53FD73A1-39E2-418B-82C6-B5FFF44E243B}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.CallCharges" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{21C8BBC3-40F4-4641-A2D5-A5BA179B94DD}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Flow Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="119.999993443489,239.199998336633" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Execute SQL Task"
+          TopLeft="104.999994263053,43.3333330319987" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="191.299993853271,84.9333330319988">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,154.266665304634"
+              Start="0,0"
+              End="0,146.766665304634">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,146.766665304634" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\Data Flow Task\OLE_DST_CallCharges"
+          TopLeft="169.166657423808,233.999998372793" />
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\Data Flow Task\FF_SRC_CallCharges"
+          TopLeft="164.166657696996,32.0666664436791" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="254.966657696996,73.6666664436791">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.59999972681203,160.333331929114"
+              Start="0,0"
+              End="8.59999972681203,152.833331929114">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,76.1666659645571" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,76.1666659645571"
+                    Point2="0,80.1666659645571"
+                    Point3="4,80.1666659645571" />
+                  <mssgle:LineSegment
+                    End="4.59999972681203,80.1666659645571" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.59999972681203,80.1666659645571"
+                    Point2="8.59999972681203,80.1666659645571"
+                    Point3="8.59999972681203,84.1666659645571" />
+                  <mssgle:LineSegment
+                    End="8.59999972681203,152.833331929114" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-3.70000013659399,85.1666659645571,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE_DST_CallCharges">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

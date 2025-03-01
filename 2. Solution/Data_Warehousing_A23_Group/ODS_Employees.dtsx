@@ -1,0 +1,1253 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/9/2024 1:35:59 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PHUCNGUYEN"
+  DTS:CreatorName="PHUCNGUYEN\nguye"
+  DTS:DTSID="{A87D3369-F034-4073-A781-09EF67E4E835}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="ODS_Employees"
+  DTS:PackageType="5"
+  DTS:VersionBuild="88"
+  DTS:VersionGUID="{67B4493B-D15A-4BDC-8FBC-89E177F3DB16}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-DE-XOAN\SQL.A_23_Call_Types_ODS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{863ED137-15FB-4D16-9597-707EB06B2401}"
+      DTS:ObjectName="LAPTOP-DE-XOAN\SQL.A_23_Call_Types_ODS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-DE-XOAN\SQL;Initial Catalog=A_23_Call_Types_ODS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-ODS_Employees-{863ED137-15FB-4D16-9597-707EB06B2401}LAPTOP-DE-XOAN\SQL.A_23_Call_Types_ODS;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-DE-XOAN\SQL.A_23_Call_Types_STA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C19AF7DB-9F24-469F-BCA6-83E13260E62A}"
+      DTS:ObjectName="LAPTOP-DE-XOAN\SQL.A_23_Call_Types_STA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-DE-XOAN\SQL;Initial Catalog=A_23_Call_Types_STA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-ODS_Employees-{C19AF7DB-9F24-469F-BCA6-83E13260E62A}LAPTOP-DE-XOAN\SQL.A_23_Call_Types_STA;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PHUCNGUYEN\NGUYENSQL2019.A_23_Call_Types_ODS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3A464FAB-F836-4A61-90E5-5CBC865D033D}"
+      DTS:ObjectName="PHUCNGUYEN\NGUYENSQL2019.A_23_Call_Types_ODS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-DE-XOAN\SQL;Initial Catalog=A_23_Call_Types_ODS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-ODS_Employees-{3A464FAB-F836-4A61-90E5-5CBC865D033D}PHUCNGUYEN\NGUYENSQL2019.A_23_Call_Types_ODS;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PHUCNGUYEN\NGUYENSQL2019.A_23_Call_Types_STA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{EB7973BD-1518-4CBE-B3F5-C8F10A36AD2C}"
+      DTS:ObjectName="PHUCNGUYEN\NGUYENSQL2019.A_23_Call_Types_STA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-DE-XOAN\SQL;Initial Catalog=A_23_Call_Types_STA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-ODS_Employees-{EB7973BD-1518-4CBE-B3F5-C8F10A36AD2C}PHUCNGUYEN\NGUYENSQL2019.A_23_Call_Types_STA;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT - ODS Employees"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{D51CB227-BE95-4AB9-AABD-6ECCE45A9CCD}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT - ODS Employees"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT - ODS Employees\DCVN - Resize"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="DCVN - Resize"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS Employees\DCVN - Resize.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS Employees\DCVN - Resize.Inputs[Data Conversion Input].Columns[EmployeeID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="EmployeeID"
+                      lineageId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].Columns[EmployeeID]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS Employees\DCVN - Resize.Inputs[Data Conversion Input].Columns[EmployeeName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="EmployeeName"
+                      lineageId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].Columns[EmployeeName]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS Employees\DCVN - Resize.Inputs[Data Conversion Input].Columns[Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Name"
+                      lineageId="Package\DFT - ODS Employees\Lookup.Outputs[Lookup Match Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS Employees\DCVN - Resize.Inputs[Data Conversion Input].Columns[Region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Region"
+                      lineageId="Package\DFT - ODS Employees\Lookup.Outputs[Lookup Match Output].Columns[Region]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS Employees\DCVN - Resize.Inputs[Data Conversion Input].Columns[ManagerName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="ManagerName"
+                      lineageId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].Columns[ManagerName]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS Employees\DCVN - Resize.Inputs[Data Conversion Input].Columns[CityName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="CityName"
+                      lineageId="Package\DFT - ODS Employees\DER - SIte.Outputs[Derived Column Output].Columns[CityName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DFT - ODS Employees\DCVN - Resize.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Output].Columns[EmployeeID_R]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Output].Columns[EmployeeID_R]"
+                      name="EmployeeID_R"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].Columns[EmployeeID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Output].Columns[EmployeeName_R]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Output].Columns[EmployeeName_R]"
+                      name="EmployeeName_R"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].Columns[EmployeeName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Output].Columns[Name_R]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Output].Columns[Name_R]"
+                      name="Name_R"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Employees\Lookup.Outputs[Lookup Match Output].Columns[Name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Output].Columns[Region_R]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Output].Columns[Region_R]"
+                      name="Region_R"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Employees\Lookup.Outputs[Lookup Match Output].Columns[Region]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Output].Columns[ManagerName_R]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Output].Columns[ManagerName_R]"
+                      name="ManagerName_R"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].Columns[ManagerName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Output].Columns[CityName_R]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Output].Columns[CityName_R]"
+                      name="CityName_R"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Employees\DER - SIte.Outputs[Derived Column Output].Columns[CityName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DFT - ODS Employees\DCVN - Resize.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - ODS Employees\DER - SIte"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER - SIte"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS Employees\DER - SIte.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS Employees\DER - SIte.Inputs[Derived Column Input].Columns[Site]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Site"
+                      lineageId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].Columns[Site]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS Employees\DER - SIte.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT - ODS Employees\DER - SIte.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\DER - SIte.Outputs[Derived Column Output].Columns[CityName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\DFT - ODS Employees\DER - SIte.Outputs[Derived Column Output].Columns[CityName]"
+                      name="CityName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,100,1252)[TRIM]([SUBSTRING](#{Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].Columns[Site]},1,[FINDSTRING](#{Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].Columns[Site]} + ",",",",1) - 1))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,100,1252)TRIM(SUBSTRING(Site,1,FINDSTRING(Site + ",",",",1) - 1))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\DER - SIte.Outputs[Derived Column Output].Columns[StateID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DFT - ODS Employees\DER - SIte.Outputs[Derived Column Output].Columns[StateID]"
+                      name="StateID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,255,1252)([RIGHT](#{Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].Columns[Site]},2))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,255,1252)(RIGHT(Site,2))</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - ODS Employees\DER - SIte.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT - ODS Employees\DER - SIte.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\DER - SIte.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Employees\DER - SIte.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\DER - SIte.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Employees\DER - SIte.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - ODS Employees\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[USStates]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[USStates]) [refTable]
+where [refTable].[StateCD] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="StateCD" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Name" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Region" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT - ODS Employees\DER - SIte.Outputs[Derived Column Output].Columns[StateID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - ODS Employees\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[PHUCNGUYEN\NGUYENSQL2019.A_23_Call_Types_STA]"
+                  connectionManagerRefId="Package.ConnectionManagers[PHUCNGUYEN\NGUYENSQL2019.A_23_Call_Types_STA]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS Employees\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS Employees\Lookup.Inputs[Lookup Input].Columns[StateID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="StateID"
+                      lineageId="Package\DFT - ODS Employees\DER - SIte.Outputs[Derived Column Output].Columns[StateID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">StateCD</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS Employees\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT - ODS Employees\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\Lookup.Outputs[Lookup Match Output].Columns[Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="255"
+                      lineageId="Package\DFT - ODS Employees\Lookup.Outputs[Lookup Match Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Name</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\Lookup.Outputs[Lookup Match Output].Columns[Region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="255"
+                      lineageId="Package\DFT - ODS Employees\Lookup.Outputs[Lookup Match Output].Columns[Region]"
+                      name="Region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Region</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - ODS Employees\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT - ODS Employees\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - ODS Employees\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT - ODS Employees\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Employees\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Employees\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - ODS Employees\OLE_DST - ODS Employees"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE_DST - ODS Employees"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Employees]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-DE-XOAN\SQL.A_23_Call_Types_ODS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-DE-XOAN\SQL.A_23_Call_Types_ODS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Inputs[OLE DB Destination Input].Columns[EmployeeID_R]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="EmployeeID_R"
+                      externalMetadataColumnId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
+                      lineageId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Output].Columns[EmployeeID_R]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Inputs[OLE DB Destination Input].Columns[EmployeeName_R]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="EmployeeName_R"
+                      externalMetadataColumnId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeName]"
+                      lineageId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Output].Columns[EmployeeName_R]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Inputs[OLE DB Destination Input].Columns[Region_R]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Region_R"
+                      externalMetadataColumnId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                      lineageId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Output].Columns[Region_R]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Inputs[OLE DB Destination Input].Columns[ManagerName_R]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="ManagerName_R"
+                      externalMetadataColumnId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Inputs[OLE DB Destination Input].ExternalColumns[ManagerName]"
+                      lineageId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Output].Columns[ManagerName_R]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Inputs[OLE DB Destination Input].Columns[Name_R]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Name_R"
+                      externalMetadataColumnId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Inputs[OLE DB Destination Input].ExternalColumns[StateName]"
+                      lineageId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Output].Columns[Name_R]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Inputs[OLE DB Destination Input].Columns[CityName_R]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CityName_R"
+                      externalMetadataColumnId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Inputs[OLE DB Destination Input].ExternalColumns[CityName]"
+                      lineageId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Output].Columns[CityName_R]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="EmployeeID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="EmployeeName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Inputs[OLE DB Destination Input].ExternalColumns[CityName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CityName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Inputs[OLE DB Destination Input].ExternalColumns[ManagerName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="ManagerName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Inputs[OLE DB Destination Input].ExternalColumns[StateName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="StateName" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - ODS Employees\OLE_SRC - STA Employees"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE_SRC - STA Employees"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Employees]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-DE-XOAN\SQL.A_23_Call_Types_STA]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-DE-XOAN\SQL.A_23_Call_Types_STA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].Columns[EmployeeID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].ExternalColumns[EmployeeID]"
+                      length="255"
+                      lineageId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].Columns[EmployeeID]"
+                      name="EmployeeID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].Columns[EmployeeName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].ExternalColumns[EmployeeName]"
+                      length="255"
+                      lineageId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].Columns[EmployeeName]"
+                      name="EmployeeName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].Columns[Site]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].ExternalColumns[Site]"
+                      length="255"
+                      lineageId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].Columns[Site]"
+                      name="Site"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].Columns[ManagerName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].ExternalColumns[ManagerName]"
+                      length="255"
+                      lineageId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].Columns[ManagerName]"
+                      name="ManagerName"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].ExternalColumns[EmployeeID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="EmployeeID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].ExternalColumns[EmployeeName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="EmployeeName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].ExternalColumns[Site]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Site" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output].ExternalColumns[ManagerName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="ManagerName" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Error Output].Columns[EmployeeID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Error Output].Columns[EmployeeID]"
+                      name="EmployeeID" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Error Output].Columns[EmployeeName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Error Output].Columns[EmployeeName]"
+                      name="EmployeeName" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Error Output].Columns[Site]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Error Output].Columns[Site]"
+                      name="Site" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Error Output].Columns[ManagerName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Error Output].Columns[ManagerName]"
+                      name="ManagerName" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT - ODS Employees.Paths[Data Conversion Output]"
+              endId="Package\DFT - ODS Employees\OLE_DST - ODS Employees.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\DFT - ODS Employees\DCVN - Resize.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DFT - ODS Employees.Paths[Derived Column Output]"
+              endId="Package\DFT - ODS Employees\Lookup.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - ODS Employees\DER - SIte.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - ODS Employees.Paths[Lookup Match Output]"
+              endId="Package\DFT - ODS Employees\DCVN - Resize.Inputs[Data Conversion Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT - ODS Employees\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT - ODS Employees.Paths[OLE DB Source Output]"
+              endId="Package\DFT - ODS Employees\DER - SIte.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT - ODS Employees\OLE_SRC - STA Employees.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL - Truncate ODS Employees"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{7d2b8030-3d6e-4867-a62d-519e6ef84c61}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL - Truncate ODS Employees"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{863ED137-15FB-4D16-9597-707EB06B2401}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.Employees" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{3712F0A5-FAD3-40F5-AA3B-5039ECE28F30}"
+      DTS:From="Package\SQL - Truncate ODS Employees"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DFT - ODS Employees" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\DFT - ODS Employees"
+          TopLeft="131.5,128.374999362354" />
+        <NodeLayout
+          Size="236.8,41.6"
+          Id="Package\SQL - Truncate ODS Employees"
+          TopLeft="111,13.7083337718827" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="227,55.7083337718827">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,72.6666655904717"
+              Start="0,0"
+              End="0,65.1666655904717">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.1666655904717" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT - ODS Employees">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="212.8,41.6"
+          Id="Package\DFT - ODS Employees\OLE_SRC - STA Employees"
+          TopLeft="137.5,52.6770830716834" />
+        <NodeLayout
+          Size="128.8,41.6"
+          Id="Package\DFT - ODS Employees\DER - SIte"
+          TopLeft="175.875,174.812499277604" />
+        <NodeLayout
+          Size="113.6,41.6"
+          Id="Package\DFT - ODS Employees\Lookup"
+          TopLeft="181,268.000000129143" />
+        <NodeLayout
+          Size="213.6,41.6"
+          Id="Package\DFT - ODS Employees\OLE_DST - ODS Employees"
+          TopLeft="128.154761904762,440.0843243959" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\DFT - ODS Employees\DCVN - Resize"
+          TopLeft="160.833333333333,349.895833044106" />
+        <EdgeLayout
+          Id="Package\DFT - ODS Employees.Paths[OLE DB Source Output]"
+          TopLeft="242.0625,94.6770830716834">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,80.1354162059208"
+              Start="0,0"
+              End="0,72.6354162059208">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,72.6354162059208" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Employees.Paths[Lookup Match Output]"
+          TopLeft="236.791666666667,310.000000129143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.895832914963"
+              Start="0,0"
+              End="0,32.395832914963">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.395832914963" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,10.3932289574815,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Employees.Paths[Derived Column Output]"
+          TopLeft="239.0625,216.812499277604">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.1875008515393"
+              Start="0,0"
+              End="0,43.6875008515393">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.6875008515393" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Employees.Paths[Data Conversion Output]"
+          TopLeft="235.369047619048,391.895833044106">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.1884913517942"
+              Start="0,0"
+              End="0,40.6884913517942">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.6884913517942" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Getting the Source data from STA Employee"
+          ParentId="Package\DFT - ODS Employees"
+          FontInfo="{assembly:Null}"
+          Size="261.6,40"
+          Id="b87d3424-e4f8-449b-be10-e007c6da77ca"
+          TopLeft="368.5,53.0833330696656" />
+        <AnnotationLayout
+          Text="Create 2 columns &#xA;CityName + StateID&#xA;from the column Site"
+          ParentId="Package\DFT - ODS Employees"
+          FontInfo="{assembly:Null}"
+          Size="140.8,72"
+          Id="d8a93e68-e75e-4b03-b88c-975059c2dae6"
+          TopLeft="351.5,164.364583204863" />
+        <AnnotationLayout
+          Text="Lookup StateName and RegionName"
+          ParentId="Package\DFT - ODS Employees"
+          FontInfo="{assembly:Null}"
+          Size="224.8,40"
+          Id="b41af6e9-711d-476a-8c18-1444afb02eed"
+          TopLeft="326.5,295.770832613628" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - ODS Employees\OLE_DST - ODS Employees">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - ODS Employees\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[USStates]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - ODS Employees\OLE_SRC - STA Employees">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
