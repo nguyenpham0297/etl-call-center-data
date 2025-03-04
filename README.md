@@ -12,6 +12,10 @@ The ETL pipeline consists of three key stages:
 2. **Operational Data Store (ODS):** Data cleansing, transformation, and standardization.
 3. **Data Warehouse (DWH):** Star schema database for efficient querying and reporting.
 
+Additionally, the project will include two folders:
+1.	**Instruction + Raw Data + Data Dictionary** – Contains documentation, raw CSV files, and the data dictionary for reference.
+2.	**Solution** – Contains the report and the completed SSIS solution, including .sln files and SSIS packages.
+
 ## Technologies Used
 - **SQL Server** for database management
 - **SSIS** for ETL pipeline implementation
