@@ -4,7 +4,7 @@
 This project is an SSIS (SQL Server Integration Services) ETL (Extract, Transform, Load) solution for ServiceSpot, an IT company that seeks an optimized Data Warehouse to analyze its call center operations. Our solution extracts raw call data, processes and cleanses it, and loads it into a structured data warehouse for insightful reporting.
 
 ## Additional Documentation
-For a comprehensive breakdown of the project, including detailed execution steps, database schema design, and data processing techniques, refer to the project report: **SSIS_Project_Report_A23_report.docx**.
+For a comprehensive breakdown of the project, including detailed execution steps, database schema design, and data processing techniques, refer to the project report: [**SSIS_Project_Report_A23_report.docx**](https://github.com/nguyenpham0297/etl-call-center-data/blob/main/2.%20Solution/SSIS_Project_Report_A23%20_%20report.docx).
 
 ## Project Structure
 The ETL pipeline consists of three key stages:
@@ -63,10 +63,10 @@ The solution consists of the following `.dtsx` SSIS packages:
 To deploy the project, open `Data_Warehousing_A23_Group.sln` in Visual Studio and execute the SSIS packages sequentially. Ensure SQL Server is configured and the necessary databases (`STA`, `ODS`, `DWH`) are created beforehand.
 
 ## Contributors
-- **Trung Nguyen** – Data Warehouse (DWH)
-- **Phuc Nguyen Pham** – Operational Data Store (ODS)
 - **Mohammed Danish Mustafa** – Staging Area (STA)
 - **Patrick Warui Githendu** – Staging Area (STA)
+- **Phuc Nguyen Pham** – Operational Data Store (ODS)
+- **Trung Nguyen** – Data Warehouse (DWH)
 
 ---
 This project provides a robust ETL framework for ServiceSpot’s call center analytics, ensuring data integrity and insightful reporting.
